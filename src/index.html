@@ -15,7 +15,24 @@
 
   <script>
     function init() {
-        
+
+        /*
+            EaselJS
+        */
+
+        // Create stage
+        var stage = new createjs.Stage("demoCanvas");
+
+        // Create a shape
+        var circle = new createjs.Shape();
+        circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
+        circle.x = 100;
+        circle.y = 100;
+        stage.addChild(circle);
+
+        // Update
+        stage.update();
+
     }
   </script>
 
