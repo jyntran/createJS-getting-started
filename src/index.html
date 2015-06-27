@@ -11,6 +11,7 @@
   </head>
 
   <body onload="init();">
+    <button onclick="playSound();" class="playSound">Play Sound</button>
     <canvas id="demoCanvas" width="500" height="300"></canvas>
 
   <script>
@@ -46,8 +47,25 @@
         // Refresh stage for each timed tick
         createjs.Ticker.setFPS(60);
         createjs.Ticker.addEventListener("tick", stage);
-
     }
+
+    /*
+        SoundJS
+    */
+
+    // Global sound
+    var soundID = "Jingle";
+
+    function loadSound() {
+        createjs.Sound.registerSound("assets/jingle.wav", soundID);
+    }
+
+    function playSound() {
+        createjs.Sound.play(soundID);
+    }
+
+    loadSound();
+
   </script>
 
   </body>
