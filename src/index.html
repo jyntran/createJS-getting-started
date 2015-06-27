@@ -12,6 +12,7 @@
 
   <body onload="init();">
     <button onclick="playSound();" class="playSound">Play Sound</button>
+    <button onclick="loadImage();">Load Image</button>
     <canvas id="demoCanvas" width="500" height="300"></canvas>
 
   <script>
@@ -65,6 +66,21 @@
     }
 
     loadSound();
+
+
+    /*
+        PreloadJS
+    */
+
+    function loadImage() {
+        var preload = new createjs.LoadQueue();
+        preload.addEventListener("fileload", handleFileComplete);
+        preload.loadFile("assets/preloadjs-bg-center.png");
+    }
+
+    function handleFileComplete(event) {
+        document.body.appendChild(event.result);
+    }
 
   </script>
 
